@@ -5,6 +5,7 @@ import ru.itmatveev.todolist.model.Entry;
 import ru.itmatveev.todolist.service.ToDoService;
 
 import java.util.List;
+
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1")
@@ -26,22 +27,34 @@ public class Controller {
         return new BaseResponse(SUCCESS_STATUS, 1);
     }
 
-    @GetMapping("/todolist")
+    @GetMapping("/ToDoList")
     public List<Entry> getToDo() {
         return toDoService.getEntryList();
     }
 
+    @GetMapping("/ToDoList/{id}")
+    public Entry getToDoById(@RequestParam long id) {
+        return toDoService.getEntryById(id);
+    }
+
     @RequestMapping("/createToDo")
-    public void createToDo(@RequestParam(value = "text") String text){
+    public void createToDo(@RequestParam(value = "text") String text) {
         Entry newEntry = new Entry(id, text, false);
-        toDoService.createToDo(newEntry);
+        toDoService.createEntry(newEntry);
         id++;
     }
 
-//    @GetMapping("/todolist/{id}")
-//    public Entry getToDoById(@RequestParam(value = "id") long id){
-//        toDoService.get
-//    }
+    @GetMapping("/deleteToDo")
+    public void deleteToDo(@RequestParam(value = "id") long id) {
+        toDoService.deleteEntry(id);
+    }
+
+    @GetMapping("/updateToDo")
+    public void updateToDo(@RequestParam(value = "id") long id,
+                           @RequestParam(value = "text") String text,
+                           @RequestParam(value = "done") boolean done) {
+        toDoService.updateEntry(id, text, done);
+    }
 
 //    @PostMapping("/pay")
 //    public BaseResponse pay(@RequestParam(value = "key") String key, @RequestBody PaymentRequest request) {
