@@ -5,7 +5,7 @@ import ru.itmatveev.todolist.model.Entry;
 import ru.itmatveev.todolist.service.ToDoService;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1")
 public class Controller {
@@ -33,10 +33,15 @@ public class Controller {
 
     @RequestMapping("/createToDo")
     public void createToDo(@RequestParam(value = "text") String text){
-        Entry newEntry = new Entry(id, text);
+        Entry newEntry = new Entry(id, text, false);
         toDoService.createToDo(newEntry);
         id++;
     }
+
+//    @GetMapping("/todolist/{id}")
+//    public Entry getToDoById(@RequestParam(value = "id") long id){
+//        toDoService.get
+//    }
 
 //    @PostMapping("/pay")
 //    public BaseResponse pay(@RequestParam(value = "key") String key, @RequestBody PaymentRequest request) {
