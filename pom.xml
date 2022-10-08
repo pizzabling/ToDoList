@@ -74,12 +74,6 @@
             <artifactId>jaxb-runtime</artifactId>
             <version>4.0.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/jaxb2-maven-plugin -->
-        <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>jaxb2-maven-plugin</artifactId>
-            <version>3.1.0</version>
-        </dependency>
 
     </dependencies>
 
