@@ -44,6 +44,12 @@
             <version>2.7.4</version>
             <type>pom</type>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>5.7.3</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.ws/spring-ws-core -->
         <dependency>
             <groupId>org.springframework.ws</groupId>

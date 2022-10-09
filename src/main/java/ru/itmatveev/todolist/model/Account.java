@@ -9,12 +9,11 @@ public class Account {
     private String password;
     private List<Entry> entryList;
 
-    public Account(long id, String nickname, String login, String password, List<Entry> entryList){
+    public Account(long id, String nickname, String login, String password){
         this.id = id;
         this.nickname = nickname;
         this.login = login;
         this.password = password;
-        this.entryList = entryList;
     }
 
     public Long getId() {
