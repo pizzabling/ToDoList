@@ -19,6 +19,10 @@ public class Entry {
         return this.text;
     }
 
+    public boolean getDone(){
+        return this.done;
+    }
+
     public void setText(String text){
         this.text = text;
     }
