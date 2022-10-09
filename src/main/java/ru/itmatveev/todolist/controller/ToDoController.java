@@ -33,10 +33,10 @@ public class ToDoController {
         return toDoService.getEntryList();
     }
 
-//    @GetMapping("/ToDoList/{id}")
-//    public Entry getToDoById(@RequestParam long id) {
-//        return toDoService.getEntryById(id);
-//    }
+    @GetMapping("/todolist/{id}")
+    public Entry getToDoById(@PathVariable long id) {
+        return toDoService.getEntryById(id);
+    }
 
     @RequestMapping("/createtodo")
     public void createToDo(@RequestParam(value = "text") String text) {
