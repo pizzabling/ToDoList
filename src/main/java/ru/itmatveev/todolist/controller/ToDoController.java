@@ -1,6 +1,7 @@
-package ru.itmatveev.todolist;
+package ru.itmatveev.todolist.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.itmatveev.todolist.BaseResponse;
 import ru.itmatveev.todolist.model.Entry;
 import ru.itmatveev.todolist.service.ToDoService;
 
@@ -9,7 +10,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1")
-public class Controller {
+public class ToDoController {
     private long id = 0;
     private static final String SUCCESS_STATUS = "success";
     private static final String ERROR_STATUS = "error";
@@ -18,7 +19,7 @@ public class Controller {
 
     private final ToDoService toDoService;
 
-    public Controller(ToDoService toDoService) {
+    public ToDoController(ToDoService toDoService) {
         this.toDoService = toDoService;
     }
 
@@ -27,29 +28,29 @@ public class Controller {
         return new BaseResponse(SUCCESS_STATUS, 1);
     }
 
-    @GetMapping("/ToDoList")
+    @GetMapping("/todolist")
     public List<Entry> getToDo() {
         return toDoService.getEntryList();
     }
 
-    @GetMapping("/ToDoList/{id}")
-    public Entry getToDoById(@RequestParam long id) {
-        return toDoService.getEntryById(id);
-    }
+//    @GetMapping("/ToDoList/{id}")
+//    public Entry getToDoById(@RequestParam long id) {
+//        return toDoService.getEntryById(id);
+//    }
 
-    @RequestMapping("/createToDo")
+    @RequestMapping("/createtodo")
     public void createToDo(@RequestParam(value = "text") String text) {
         Entry newEntry = new Entry(id, text, false);
         toDoService.createEntry(newEntry);
         id++;
     }
 
-    @GetMapping("/deleteToDo")
+    @GetMapping("/deletetodo")
     public void deleteToDo(@RequestParam(value = "id") long id) {
         toDoService.deleteEntry(id);
     }
 
-    @GetMapping("/updateToDo")
+    @GetMapping("/updatetodo")
     public void updateToDo(@RequestParam(value = "id") long id,
                            @RequestParam(value = "text") String text,
                            @RequestParam(value = "done") boolean done) {
@@ -76,3 +77,4 @@ public class Controller {
 //    }
 
 }
+
