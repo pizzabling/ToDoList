@@ -1,15 +1,13 @@
 package ru.itmatveev.todolist.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.itmatveev.todolist.model.Account;
 import ru.itmatveev.todolist.service.AccountService;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
+@RequestMapping("/api/v1")
 public class AccountController {
     private long id = 0;
     private final AccountService accountService;
