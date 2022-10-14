@@ -38,10 +38,9 @@ public class ToDoController {
         return toDoService.getEntryById(id);
     }
 
-    @RequestMapping("/createtodo")
-    public void createToDo(@RequestParam(value = "text") String text) {
-        Entry newEntry = new Entry(id, text, false);
-        toDoService.createEntry(newEntry);
+    @PostMapping("/createtodo")
+    public void createToDo(@RequestBody Entry entry) {
+        toDoService.createEntry(entry);
         id++;
     }
 
