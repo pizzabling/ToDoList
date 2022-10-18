@@ -3,6 +3,7 @@ package ru.itmatveev.todolist.controller;
 import org.springframework.web.bind.annotation.*;
 import ru.itmatveev.todolist.BaseResponse;
 import ru.itmatveev.todolist.model.Entry;
+import ru.itmatveev.todolist.model.Sublist;
 import ru.itmatveev.todolist.service.ToDoService;
 
 import java.util.List;

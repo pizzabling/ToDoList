@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class ToDoService {
     private List<Entry> entryList = new ArrayList<>();
-
+    private long id = 0;
     public List<Entry> getEntryList(){
         return entryList;
     }
@@ -26,7 +26,9 @@ public class ToDoService {
     }
 
     public void createEntry(Entry entry){
+        entry.setId(id);
         entryList.add(entry);
+        id++;
     }
 
     public void deleteEntry(long id){
