@@ -6,16 +6,16 @@ public class Entry {
     private long id;
     private String text;
     private boolean done;
-    private List<Sublist> subList;
+//    private List<Sublist> subList;
     private String priority;
 
-    public Entry(long id, String text, boolean done, List<Sublist> subList, String priority){
-        this.id = id;
-        this.text = text;
-        this.done = done;
-        this.subList = subList;
-        this.priority = priority;
-    }
+//    public Entry(long id, String text, boolean done, List<Sublist> subList, String priority){
+//        this.id = id;
+//        this.text = text;
+//        this.done = done;
+//        this.subList = subList;
+//        this.priority = priority;
+//    }
 
     public Entry(long id, String text, boolean done, String priority){
         this.id = id;
@@ -44,13 +44,13 @@ public class Entry {
         this.done = done;
     }
 
-    public List<Sublist> getSubList() {
-        return subList;
-    }
-
-    public void setSubList(List<Sublist> subList) {
-        this.subList = subList;
-    }
+//    public List<Sublist> getSubList() {
+//        return subList;
+//    }
+//
+//    public void setSubList(List<Sublist> subList) {
+//        this.subList = subList;
+//    }
 
     public String getPriority() {
         return priority;
